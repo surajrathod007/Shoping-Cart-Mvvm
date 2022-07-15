@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shopViewModel"
+            type="com.surajrathod.shopingcart.viewmodels.ShopViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ProductDetailFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imgProductDetail"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:imageUrls="@{shopViewModel.product.image}"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{shopViewModel.product.name}" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{ `$` + shopViewModel.product.price}" />
+
+            <TextView
+                android:id="@+id/txtAvailable"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@{shopViewModel.product.available ? @color/black : @color/red}"
+                android:text="@{shopViewModel.product.available ? `Available` : `Not Available`}" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description" />
+
+            <TextView
+                android:id="@+id/txtContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hshsjsh sjbsjjs hsihsk " />
+
+            <Button
+                android:layout_margin="10dp"
+                android:enabled="@{shopViewModel.product.available}"
+                android:onClick="@{() -> shopViewModel.addToCart(shopViewModel.product)}"
+                android:id="@+id/btnAddProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Add To Cart" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
