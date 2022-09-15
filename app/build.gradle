@@ -22,7 +22,20 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+//
+//        debug {
+//            minifyEnabled true
+//        }
+//        release {
+//            minifyEnabled true
+//        }
     }
+//
+//    packagingOptions{
+//        exclude 'com/itextpdf/io/font/cmap_info.txt'
+//        exclude 'com/itextpdf/io/font/cmap/*'
+//    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,6 +48,9 @@ android {
         dataBinding true
         viewBinding true
     }
+
+
+
 }
 
 dependencies {
@@ -65,4 +81,9 @@ dependencies {
     //Glide Library
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //itext
+    implementation 'com.itextpdf.android:kernel-android:7.2.3'
+    implementation 'com.itextpdf.android:layout-android:7.2.3'
+    implementation 'com.itextpdf.android:io-android:7.2.3'
 }

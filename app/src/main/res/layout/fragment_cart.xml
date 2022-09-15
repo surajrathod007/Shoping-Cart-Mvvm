@@ -47,5 +47,16 @@
             android:text="Place Order"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
 
+        <Button
+            android:backgroundTint="#fc4878"
+            android:id="@+id/generateBill"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="8dp"
+            android:text="Generate Bill"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
     </LinearLayout>
 </ScrollView>
